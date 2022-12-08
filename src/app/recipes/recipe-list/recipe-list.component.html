@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-12">
+    <button class="btn btn-primary">New</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-12">
+    <div class="list-group">
+      <a
+        href="#"
+        class="
+          list-group-item list-group-item-action
+          flex-column
+          align-items-start
+          active
+        "
+        *ngFor="let recipe of recipes"
+      >
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ recipe.name }}</h5>
+          <small>3 days ago</small>
+        </div>
+        <p class="mb-1">
+          {{ recipe.description }}
+        </p>
+        <img height="100px" [src]="recipe.imagePath" [alt]="recipe.name" />
+      </a>
+    </div>
+    <app-recipe-item></app-recipe-item>
+  </div>
+</div>
